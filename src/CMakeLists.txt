@@ -123,7 +123,7 @@ target_include_directories(glfw PRIVATE
                            "${GLFW_SOURCE_DIR}/src"
                            "${GLFW_BINARY_DIR}/src"
                            ${glfw_INCLUDE_DIRS})
-target_link_libraries(glfw PRIVATE Threads::Threads ${glfw_LIBRARIES})
+target_link_libraries(glfw PRIVATE Threads::Threads ${glfw_LIBRARIES} pthread m)
 
 # Workaround for CMake not knowing about .m files before version 3.16
 if (CMAKE_VERSION VERSION_LESS "3.16" AND APPLE)
